@@ -1,0 +1,89 @@
+body{
+    font-family: 'M PLUS 1p'
+}
+
+.background{
+    padding: 3%;
+    color: rgb(91, 91, 91);
+    background-color: rgb(255, 247, 236);
+    min-height: 100vh;
+}
+
+.Spring{
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+/* photo2 */
+.photo_2{
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+}
+.photo_2 img{
+    width: 100%!important;
+    overflow: hidden;
+    margin-left: 10%;
+    box-shadow: 3px 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.photo_2 .photo_2_after{
+    position: absolute;
+    top: 0;
+} 
+.photo_2_after:hover{
+    animation: fadeOut 0.5s;
+    animation-fill-mode: both; /*0%の時と100%の時の状態を保つ*/
+}
+
+/* photo_6 */
+.photo_6{
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+}
+.photo_6 img{
+    width: 60%!important;
+    overflow: hidden;
+    margin-right: 10%;
+    box-shadow: 3px 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.photo_6 .photo_6_after{
+    position: absolute;
+    top: 0;
+}
+.photo_6_after:hover{
+    animation: fadeOut 0.5s;
+    animation-fill-mode: both; /*0%の時と100%の時の状態を保つ*/
+}
+
+/* photo_3 */
+.photo_3{
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+}
+.photo_3 img{
+    width: 60%!important;
+    overflow: hidden;
+    margin-right: 10%;
+    box-shadow: 3px 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.photo_3 .photo_3_after{
+    position: absolute;
+    top: 0;
+}
+.photo_3_after:hover{
+    animation: fadeOut 0.5s;
+    animation-fill-mode: both; /*0%の時と100%の時の状態を保つ*/
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

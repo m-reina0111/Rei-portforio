@@ -1,0 +1,215 @@
+body{
+    font-family: 'M PLUS 1p'
+}
+
+.background{
+    padding: 5%;
+    color: rgb(91, 91, 91);
+    background-color: rgb(255, 247, 236);
+}
+
+.info_me{
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo_me{
+    width: 40%;
+    margin-left: 10%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.text_me{
+    text-align: left;
+    padding: 3% 18% 3% 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item_me{
+    font-size: 15px;
+    margin-top: 0px;
+}
+
+.gray_border{
+    border-right: 5px solid rgb(208, 208, 208);
+    padding-right: 15px;
+    margin-right: 20px;
+}
+
+.my_info{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.text_history,.text_greet{
+    padding: 3% 10%;
+}
+
+.title_history,.title_greet{
+    border-bottom: 1.2px solid rgb(208, 208, 208);
+    width: 20%;
+    padding-bottom: 1%;
+}
+
+.title_history p{
+    font-size: 25px;
+    letter-spacing: 10px;
+    padding-left: 5%;
+    margin: 0;
+}
+
+.title_greet p{
+    font-size: 25px;
+    letter-spacing: 10px;
+    padding-left: 5%;
+    margin: 0;
+}
+
+.history_contents{
+    font-size: 15px;
+}
+
+.mvv{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0;
+}
+
+.thin_boder{
+    font-weight: lighter;
+}
+
+.my_mission,.my_vision,.my_value{
+    background-color: rgb(255, 250, 244);
+    border-radius: 10px;
+    box-shadow: 3px 5px 5px 0 rgba(0, 0, 0, 0.1);
+    width: 25%;
+    padding: 3%!important;
+    text-align: center;
+    position: relative;
+}
+
+.icon_mission,.icon_vision,.icon_value{
+    width: 45%;
+}
+
+.my_mission::after{
+    position: absolute;
+    content: 'Mission';
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.my_vision::after{
+    position: absolute;
+    content: 'Vision';
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.my_value::after{
+    position: absolute;
+    content: 'Value';
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Start_Mission */
+.my_mission p{
+    margin: 0;
+    padding: 1%;
+    font-size: 15px;
+}
+
+.title_Mission p{
+    font-weight: 600;
+    padding: 1%;
+    font-size: 18px;
+    margin: 0;
+}
+
+.contents_mission{
+    text-align: left;
+    padding-top: 8%;
+}
+
+.contents_mission p{
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0;
+}
+/* End_Mission */
+
+/* Start_Vision */
+.my_vision p{
+    margin: 0;
+    padding: 1%;
+    font-size: 15px;
+}
+
+.title_Vision p{
+    font-weight: 600;
+    padding: 1%;
+    font-size: 18px;
+}
+
+.contents_vision{
+    text-align: left;
+    padding-top: 8%;
+}
+
+.contents_vision p{
+    font-size: 15px;
+    line-height: 25px;
+}
+/* End_Vision */
+
+/* Start_Value */
+.my_value p{
+    margin: 0;
+    padding: 1%;
+    font-size: 15px;
+}
+
+.title_Value p{
+    font-weight: 600;
+    padding: 1%;
+    font-size: 18px;
+    margin: 0;
+}
+
+.contents_value{
+    text-align: left;
+    padding-top: 5%;
+}
+
+.contents_value p{
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0;
+}
+
+.contents_value_text{
+    font-size: 14px!important;
+}
+
+.contents_value_text_1{
+    padding-bottom: 10px!important;
+}
+/* End_Value */
