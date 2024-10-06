@@ -4,30 +4,79 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/Users/reich/portforio/03_portforio/portforio.css">
         <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&amp;subset=japanese" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
     </head>
     <body>
         <div class="background">
-           <div class="PF_photo">
-                <div class="Spring">
-                    <div class="photo_2">
-                        <img class="photo_2_after" src="/Users/reich/portforio/03_portforio/photo/spring/photo_2_after.JPG" alt="portrait">
-                        <img class="photo_2_before" src="/Users/reich/portforio/03_portforio/photo/spring/photo_2_before.JPG" alt="portrait">
+            <div class="photos">
+                <div class="title_photo">
+                    <p><span class="thin_boder">-</span>&nbsp;Photo&nbsp;&&nbsp;ReTouch&nbsp;<span class="thin_boder">-</span></p>
+                </div>
+                <div class="slider">
+                    <!-- 要素_1 -->
+                    <div class="photo_slide">
+                        <div class="photo">
+                            <img class="photo_after" src="/Users/reich/portforio/03_portforio/photo/spring/photo_2_after.JPG" alt="portrait">
+                            <img class="photo_before" src="/Users/reich/portforio/03_portforio/photo/spring/photo_2_before.JPG" alt="portrait">
+                        </div>
                     </div>
-                    <div class="photo_6">
-                        <img class="photo_6_after" src="/Users/reich/portforio/03_portforio/photo/spring/photo_6_after.JPG" alt="flower">
-                        <img class="photo_6_before" src="/Users/reich/portforio/03_portforio/photo/spring/photo_6_before.JPG" alt="flower">
+                    <!-- 要素_2 -->
+                    <div class="photo_slide">
+                        <div class="photo">
+                            <img class="photo_after" src="/Users/reich/portforio/03_portforio/photo/summer/photo_1_after.jpg" alt="girl">
+                            <img class="photo_before" src="/Users/reich/portforio/03_portforio/photo/summer/photo_1_before.JPG" alt="girl">
+                        </div>
                     </div>
-                    <div class="photo_3">
-                        <img class="photo_3_after" src="/Users/reich/portforio/03_portforio/photo/spring/photo_3_after.JPG" alt="bird">
-                        <img class="photo_3_before" src="/Users/reich/portforio/03_portforio/photo/spring/photo_3_before.JPG" alt="bird">
+                    <!-- 要素_3 -->
+                    <div class="photo_slide">
+                        <div class="photo">
+                            <img class="photo_after" src="/Users/reich/portforio/03_portforio/photo/summer/photo_4_after.jpg" alt="highschool">
+                            <img class="photo_before" src="/Users/reich/portforio/03_portforio/photo/summer/photo_4_before.JPG" alt="highschool">
+                        </div>
+                    </div>
+                    <!-- 要素_4 -->
+                    <div class="photo_slide">
+                        <div class="photo">
+                            <img class="photo_after" src="/Users/reich/portforio/03_portforio/photo/summer/photo_9_after.jpg" alt="stars_falling">
+                            <img class="photo_before" src="/Users/reich/portforio/03_portforio/photo/summer/photo_9_before.JPG" alt="stars_falling">
+                        </div>
+                    </div>
+                    <!-- 要素_5 -->
+                    <div class="photo_slide">
+                        <div class="photo">
+                            <img class="photo_after" src="/Users/reich/portforio/03_portforio/photo/summer/photo_5_after.jpg" alt="sea_shining">
+                            <img class="photo_before" src="/Users/reich/portforio/03_portforio/photo/summer/photo_5_before.JPG" alt="sea_shining">
+                        </div>
+                    </div>
+                    <!-- 要素_6 -->
+                    <div class="photo_slide">
+                        <div class="photo">
+                            <img class="photo_after" src="/Users/reich/portforio/03_portforio/photo/summer/photo_8_after.jpg" alt="blue_portrait">
+                            <img class="photo_before" src="/Users/reich/portforio/03_portforio/photo/summer/photo_8_before.JPG" alt="blue_portrait">
+                        </div>
                     </div>
                 </div>
-                <div class="Summer">
-                    <div class="photo_">
-                        
-                    </div>
-                </div>
-           </div>
+                <div class="box1"></div>
+                <div class="box2"></div>
+            </div>
         </div>
     </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.slider').slick({
+        autoplay: false,   // オートなし
+        dots: true,        // ナビゲーション用のドットを表示
+        dotsClass: "slider_dots", //dotsのデザイン変更
+        infinite: true,    // スライドを無限ループ
+        speed: 800,        // スライドの切り替え速度
+        slidesToShow: 1,   // 一度に表示するスライドの数
+        slidesToScroll: 1, // スライドをスクロールする数
+        arrows: false,      // 左右の矢印を表示
+    });
+});
+</script>
