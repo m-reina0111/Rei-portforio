@@ -22,19 +22,35 @@
                     <video src="/Users/reich/portforio/01_toppage/top_movie.mp4" loop autoplay muted playsinline></video>
                 </div>
                 <div class="white_box"></div>
-                <div class="column">
-                    <div class="line">
-                        <img src="/Users/reich/portforio/01_toppage/line_title.png" alt="">
-                    </div>
-                    <div class="page_title">
-                        <p class="wa">わ</p>
-                        <p class="shi">し</p>
-                        <p class="zu">づ</p>
-                        <p class="ka">か</p>
-                        <p class="mi">み</p>
-                    </div>
+                <div class="title">
+                    <img src="/Users/reich/portforio/01_toppage/title.png" alt="">
                 </div>
             </div>
         </div>
     </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+    $(function(){
+        const menuIcon = document.querySelector('.menu_icon');
+        const xIcon = document.querySelector('.x_icon');
+        $('.menu_icon').on('click', function() {
+            //menu_iconがnoneになる
+            menuIcon.style.display = 'none';
+            //x_iconが現れる
+            xIcon.style.display = 'block';
+            //メニューページが現れる
+        })
+
+        $('.x_icon').on('click', function() {
+            //x_iconがnoneになる
+            xIcon.style.display = 'none';
+            //menu_iconが現れる
+            menuIcon.style.display = 'block';
+            //メニューページが閉じる
+        })
+    })
+</script>
