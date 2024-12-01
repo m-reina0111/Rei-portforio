@@ -4,6 +4,7 @@ body{
 
 .background{
     /* padding-top: 3%; */
+    position: relative;
     padding-bottom: 6%;
     color: rgb(91, 91, 91);
     background-color: rgb(255, 247, 236);
@@ -49,6 +50,26 @@ body{
     cursor: pointer;
 }
 /* menu_click */
+
+/* menu_contents */
+.menu_contents{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: white;
+    border-radius: 30px;
+    width: 80%;
+    text-align: center;
+}
+.menu ul{
+    display: flex;
+}
+.menu li{
+    margin-right: 10%;
+}
+/* menu_contents */
 
 /* main_contents */
 .main_contents{
