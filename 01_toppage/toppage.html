@@ -18,13 +18,18 @@
                 </div>
             </div>
             <div class="menu_contents">
-                <div class="menu_image">
-                    
+                <div class="images">
+                    <div class="menu_image">
+                        <img class="imageItem" src="/Users/reich/portforio/01_toppage/menu/blue.jpeg" alt="">
+                    </div>
+                    <div class="menu_image">
+                        <img class="imageItem int_thumbnail" src="/Users/reich/portforio/01_toppage/menu/int_thumbnail.JPG" alt="">
+                    </div>
                 </div>
                 <div class="menu">
                     <ul>
                         <li><a href="#">TOP</a></li>
-                        <li><a href="#">ABOUT</a></li>
+                        <li><a class="int" href="#">ABOUT</a></li>
                         <li><a href="#">WORKS</a></li>
                         <li><a href="#">CONTACT</a></li>
                     </ul>
@@ -66,4 +71,21 @@
             //メニューページが閉じる
         })
     })
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // int クラスのリンクを取得
+    const intLink = document.querySelector('.int');
+    // int_thumbnail を取得
+    const intThumbnail = document.querySelector('.int_thumbnail');
+
+    // マウスオーバー時のイベントを設定
+    intLink.addEventListener('mouseover', function () {
+        intThumbnail.classList.add('show'); // 表示
+    });
+
+    // マウスアウト時のイベントを設定
+    intLink.addEventListener('mouseout', function () {
+        intThumbnail.classList.remove('show'); // 非表示
+    });
+});
 </script>
