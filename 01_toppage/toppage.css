@@ -1,6 +1,9 @@
 body{
     font-family: "Noto Sans JP", sans-serif;
 }
+body::-webkit-scrollbar{
+    display:none;
+}
 
 .background{
     /* padding-top: 3%; */
@@ -10,63 +13,63 @@ body{
     background-color: rgb(255, 247, 236);
     text-align: left;
     min-height: 100vh;
-}
-.header{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    float: right;
-    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .menu_icon{
     position: absolute;
     object-fit: cover;
     text-align: right;
-    padding-top: 3%;
+    margin-top: 3%;
     top: 0;
     right: 60px;
+    cursor: pointer;
+    z-index: 100;
 }
 .menu_img{
     width: 30%;
     padding: 10px;
     opacity: 0.6;
     border-radius: 50%;
-    cursor: pointer;
-}
-.x_icon{
-    position: absolute;
-    display: none;
-    object-fit: cover;
-    text-align: right;
-    padding-top: 3%;
-    top: 0px;
-    right: 60px;
-}
-.x_img{
-    width: 40%;
-    opacity: 0.6;
-    border-radius: 50%;
-    cursor: pointer;
 }
 /* menu_click */
 
 /* menu_contents */
 .menu_contents{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 5%;
+    right: -100%; /* 初期位置を画面外に設定 */
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 3px 8px 50px 0 rgba(81, 81, 81, 0.3);
     width: 75%;
     text-align: center;
     padding: 5%;
+    display: block; /* 常に表示だが、位置が画面外 */
+    transition: right 0.4s ease; /* 右から左へのアニメーション */
+}
+.menu_contents.show {
+    right: -2%; /* 表示位置 */
+}
+.x_icon{
+    position: absolute;
+    object-fit: cover;
+    text-align: right;
+    top: 4%;
+    right: 4%;
+    cursor: pointer;
+    display: none; /* 初期状態で非表示 */
+}
+.x_img{
+    width: 35%;
+    opacity: 0.6;
+    border-radius: 50%;
 }
 .menu{
-    padding-top: 5%;
+    padding-top: 4%;
+    height: 100px;
 }
 .menu a{
     text-decoration: none;
@@ -101,12 +104,13 @@ body{
     margin: 0 auto;
 }
 .imageItem{
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
+/* int */
 .int_thumbnail{
     opacity: 0; /* 初期状態で透明 */
     visibility: hidden; /* 非表示状態 */
@@ -116,49 +120,134 @@ body{
     opacity: 1; /* 完全に表示 */
     visibility: visible; /* 表示状態 */
 }
+
+/* top */
+.top_thumbnail{
+    opacity: 0; /* 初期状態で透明 */
+    visibility: hidden; /* 非表示状態 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 0.5秒で変化 */
+}
+.top_thumbnail.show {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible; /* 表示状態 */
+}
+
+/* works */
+.works_thumbnail{
+    opacity: 0; /* 初期状態で透明 */
+    visibility: hidden; /* 非表示状態 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 0.5秒で変化 */
+}
+.works_thumbnail.show {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible; /* 表示状態 */
+}
+
+/* contact */
+.contact_thumbnail{
+    opacity: 0; /* 初期状態で透明 */
+    visibility: hidden; /* 非表示状態 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 0.5秒で変化 */
+}
+.contact_thumbnail.show {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible; /* 表示状態 */
+}
+
 /* menu_contents */
 
 /* main_contents */
 .main_contents{
     position: relative;
     z-index: 0;
+    display: flex;
+    align-items: center;
+    min-height: 85vh;
+    width: 100%;
 }
 .top_video{
-    width: 75%;
+    position: relative;
     z-index: 10;
+    width: 65%;
 }
 video{
     position: relative;
-    top: 0px;
     width: 100%;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     box-shadow: 5px 5px 30px 0px rgba(102, 86, 62, 0.3);
+    display: block;
 }
 .white_box{
     position: absolute;
     background-color: white;
-    width: 80%;
-    height: 95%;
+    width: 65%;
+    height: 100%;
     left: 0px;
-    bottom: -8%;
+    top: 0;
     z-index: -5;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     box-shadow: 0px 0px 15px 20px white;
 }
-.title img{
-    width: 18%;
+.logo{
     position: absolute;
-    right: 26%;
-    bottom: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 50%;
+    z-index: 20;
+    pointer-events: none;
+    text-align: right; /* 右寄せにする */
+}
+.logo_container{
+    position: relative;
+    width: 100%;
+    display: inline-block; /* インラインブロック要素にする */
+    text-align: left; /* 内部のテキストは左寄せに戻す */
+}
+.logo_img{
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: -10%;
 }
 
 @media screen and (max-width:1280px){
     .top_video{
+        width: 65%;
+    }
+    .logo_img{
+        left: -10%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .top_video{
         width: 75%;
     }
-    video{
-        width: 100%;
+    .white_box{
+        width: 75%;
+    }
+    .logo{
+        width: 60%;
+    }
+    .logo_img{
+        /* left: 15%; 値を大きくしてさらに右に移動 */
+    }
+}
+
+@media screen and (max-width:480px){
+    .top_video{
+        width: 80%;
+    }
+    .white_box{
+        width: 80%;
+    }
+    .logo{
+        width: 70%;
+    }
+    .logo_img{
+        /* left: 10%; 値を大きくしてさらに右に移動 */
     }
 }
