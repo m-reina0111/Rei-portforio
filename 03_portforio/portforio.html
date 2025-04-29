@@ -3,13 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/Users/reich/portforio/03_portforio/portforio.css">
-        <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&amp;subset=japanese" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
     </head>
     <body>
         <div class="background">
+            <div class="menu_icon">
+                <img class="menu_img" src="/Users/reich/portforio/01_toppage/header/menu.png" alt="menu">
+            </div>
+            <div class="menu_contents">
+                <div class="x_icon">
+                    <img class="x_img" src="/Users/reich/portforio/01_toppage/header/x.png" alt="x">
+                </div>
+                <div class="images">
+                    <div class="menu_image">
+                        <img class="imageItem" src="/Users/reich/portforio/01_toppage/menu/blue.jpeg" alt="">
+                    </div>
+                    <div class="menu_image">
+                        <img class="imageItem top_thumbnail" src="/Users/reich/portforio/01_toppage/menu/top_thumbnail.jpg" alt="">
+                    </div>
+                    <div class="menu_image">
+                        <img class="imageItem int_thumbnail" src="/Users/reich/portforio/01_toppage/menu/int_thumbnail.JPG" alt="">
+                    </div>
+                    <div class="menu_image">
+                        <img class="imageItem works_thumbnail" src="/Users/reich/portforio/01_toppage/menu/works_thumbnail.JPG" alt="">
+                    </div>
+                    <div class="menu_image">
+                        <img class="imageItem contact_thumbnail" src="/Users/reich/portforio/01_toppage/menu/contact_thumbnail.JPG" alt="">
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a class="top" href="/Users/reich/portforio/01_toppage/toppage.html">TOP</a></li>
+                        <li><a class="int" href="/Users/reich/portforio/02_int_myself/int_myself.html">ABOUT</a></li>
+                        <li><a class="works" href="/Users/reich/portforio/03_portforio/portforio.html">WORKS</a></li>
+                        <li><a class="contact" href="#">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="photos">
                 <div class="title_photo">
                     <p><span class="thin_boder">-</span>&nbsp;Photo&nbsp;&&nbsp;ReTouch&nbsp;<span class="thin_boder">-</span></p>
@@ -123,8 +158,7 @@
                             <video src="/Users/reich/portforio/03_portforio/pptx/pp_3.mp4" loop autoplay muted playsinline></video>
                                 <p class="bold">グループディスカッション</p>
                                 <p>
-                                    依頼企業様が大学３年生向けに行う<br>
-                                    ２回目の講演時に作成した資料になります。<br>
+                                    依頼企業様が大学３年生向けに行う２回目の講演時に作成した資料になります。<br>
                                     体験型の講演であったため、手順や重要点を的確に伝える必要がありました。<br>
                                     そこで、色やフォントサイズの強弱を使って大事な部分を明確化しました。<br>
                                     講演後に「お洒落でわかりやすかった」と感想をいただきとても嬉しく感じました。
@@ -236,7 +270,8 @@ $(document).ready(function(){
         speed: 800,        // スライドの切り替え速度
         slidesToShow: 1,   // 一度に表示するスライドの数
         slidesToScroll: 1, // スライドをスクロールする数
-        arrows: false,      // 左右の矢印を非表示
+        prevArrow: '<div class="slide-arrow prev-arrow"><img src="/Users/reich/portforio/03_portforio/photo/left.png"></div>',
+        nextArrow: '<div class="slide-arrow next-arrow"><img src="/Users/reich/portforio/03_portforio/photo/right.png"></div>'
     });
 
     $('.block_slider').slick({
@@ -261,5 +296,93 @@ $(document).ready(function(){
         pauseOnHover: false,    //ホバーしても止まらないように
         pauseOnFocus: false,    //フォーカスしても止まらないように
     });
+});
+</script>
+
+<script>
+    $(function(){
+        const menuIcon = document.querySelector('.menu_icon');
+        const xIcon = document.querySelector('.x_icon');
+        const menuContents = document.querySelector('.menu_contents');
+        
+        $('.menu_icon').on('click', function() {
+            menuIcon.style.display = 'none';
+            //x_iconが現れる
+            xIcon.style.display = 'block';
+            //メニューページが現れる
+            menuContents.classList.remove('hide');
+            //メニューページが表示される
+            menuContents.classList.add('show');
+        })
+
+        $('.x_icon').on('click', function() {
+            //メニューページが閉じる
+            menuContents.classList.remove('show');
+            //メニューページが非表示になる
+            menuContents.classList.add('hide');
+            //x_iconがnoneになる
+            setTimeout(() => {
+                xIcon.style.display = 'none';
+                menuIcon.style.display = 'block';
+                menuContents.classList.remove('hide');
+            }, 400);
+        })
+    })
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // int 
+    const intLink = document.querySelector('.int');
+    const intThumbnail = document.querySelector('.int_thumbnail');
+
+    // top
+    const topLink = document.querySelector('.top');
+    const topThumbnail = document.querySelector('.top_thumbnail');
+
+    // works
+    const worksLink = document.querySelector('.works');
+    const worksThumbnail = document.querySelector('.works_thumbnail');
+
+    // contact
+    const contactLink = document.querySelector('.contact');
+    const contactThumbnail = document.querySelector('.contact_thumbnail');
+
+    // マウスオーバー時のイベントを設定 int
+    intLink.addEventListener('mouseover', function () {
+        intThumbnail.classList.add('show'); // 表示
+    });
+    intLink.addEventListener('mouseout', function () {
+        intThumbnail.classList.remove('show'); // 非表示
+    });
+
+    // top
+    topLink.addEventListener('mouseover', function () {
+        topThumbnail.classList.add('show'); // 表示
+    });
+    topLink.addEventListener('mouseout', function () {
+        topThumbnail.classList.remove('show'); // 非表示
+    });
+
+    // works
+    worksLink.addEventListener('mouseover', function () {
+        worksThumbnail.classList.add('show'); // 表示
+    });
+    worksLink.addEventListener('mouseout', function () {
+        worksThumbnail.classList.remove('show'); // 非表示
+    });
+
+    // contact
+    contactLink.addEventListener('mouseover', function () {
+        contactThumbnail.classList.add('show'); // 表示
+    });
+    contactLink.addEventListener('mouseout', function () {
+        contactThumbnail.classList.remove('show'); // 非表示
+    });
+
+    // CONTACTリンクのクリックイベント
+    contactLink.addEventListener('click', function(e) {
+        e.preventDefault(); // デフォルトのリンク動作を防止
+        alert('現在準備中です');
+    });
+    
 });
 </script>
