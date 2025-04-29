@@ -9,6 +9,152 @@ body{
     min-height: 100vh;
 }
 
+.menu_icon{
+    position: fixed;
+    object-fit: cover;
+    text-align: right;
+    top: 0;
+    right: -5px;
+    cursor: pointer;
+    z-index: 100;
+    width: 10%;
+}
+.menu_img{
+    width: 60%;
+    padding: 10px;
+}
+/* menu_click */
+
+/* menu_contents */
+.menu_contents{
+    position: fixed;
+    top: 5%;
+    right: -100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 3px 8px 50px 0 rgba(81, 81, 81, 0.3);
+    width: 75%;
+    text-align: center;
+    padding: 5%;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.4s ease, visibility 0.4s ease, opacity 0.4s ease;
+}
+.menu_contents.show {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+.menu_contents.hide {
+    transform: translateX(100%);
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+}
+.x_icon{
+    position: absolute;
+    object-fit: cover;
+    text-align: right;
+    top: 4%;
+    right: 4%;
+    cursor: pointer;
+    display: none; /* 初期状態で非表示 */
+}
+.x_img{
+    width: 35%;
+    opacity: 0.6;
+    border-radius: 50%;
+}
+.menu{
+    padding-top: 4%;
+    height: 100px;
+}
+.menu a{
+    text-decoration: none;
+    color: gray;
+}
+.menu a:hover{
+    color: rgb(51, 51, 51);
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+}
+.menu li{
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: bold;
+    background:url(/Users/reich/portforio/01_toppage/menu/arrow.png) no-repeat 0 0;
+    background-size:40px auto;
+    padding-left: 40px;
+}
+.images{
+    position: relative;
+    height: 300px;
+}
+.menu_image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    margin: 0 auto;
+}
+.imageItem{
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+/* int */
+.int_thumbnail{
+    opacity: 0; /* 初期状態で透明 */
+    visibility: hidden; /* 非表示状態 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 0.5秒で変化 */
+}
+.int_thumbnail.show {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible; /* 表示状態 */
+}
+
+/* top */
+.top_thumbnail{
+    opacity: 0; /* 初期状態で透明 */
+    visibility: hidden; /* 非表示状態 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 0.5秒で変化 */
+}
+.top_thumbnail.show {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible; /* 表示状態 */
+}
+
+/* works */
+.works_thumbnail{
+    opacity: 0; /* 初期状態で透明 */
+    visibility: hidden; /* 非表示状態 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 0.5秒で変化 */
+}
+.works_thumbnail.show {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible; /* 表示状態 */
+}
+
+/* contact */
+.contact_thumbnail{
+    opacity: 0; /* 初期状態で透明 */
+    visibility: hidden; /* 非表示状態 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 0.5秒で変化 */
+}
+.contact_thumbnail.show {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible; /* 表示状態 */
+}
+
 .photos{
     position: relative;
     background-color: rgba(255, 255, 255, 0.8);

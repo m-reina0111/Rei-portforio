@@ -47,7 +47,6 @@
                 <div class="top_video">
                     <video src="/Users/reich/portforio/01_toppage/top_movie.mp4" loop autoplay muted playsinline></video>
                 </div>
-                <div class="white_box"></div>
                 <div class="logo">
                     <div class="logo_container">
                         <img class="logo_img" src="/Users/reich/portforio/01_toppage/logo.png" alt="わしづかみ">
@@ -66,22 +65,28 @@
         const menuIcon = document.querySelector('.menu_icon');
         const xIcon = document.querySelector('.x_icon');
         const menuContents = document.querySelector('.menu_contents');
+        
         $('.menu_icon').on('click', function() {
-            //menu_iconがnoneになる
             menuIcon.style.display = 'none';
             //x_iconが現れる
             xIcon.style.display = 'block';
             //メニューページが現れる
+            menuContents.classList.remove('hide');
+            //メニューページが表示される
             menuContents.classList.add('show');
         })
 
         $('.x_icon').on('click', function() {
-            //x_iconがnoneになる
-            xIcon.style.display = 'none';
-            //menu_iconが現れる
-            menuIcon.style.display = 'block';
             //メニューページが閉じる
             menuContents.classList.remove('show');
+            //メニューページが非表示になる
+            menuContents.classList.add('hide');
+            //x_iconがnoneになる
+            setTimeout(() => {
+                xIcon.style.display = 'none';
+                menuIcon.style.display = 'block';
+                menuContents.classList.remove('hide');
+            }, 400);
         })
     })
 
@@ -132,6 +137,12 @@
     });
     contactLink.addEventListener('mouseout', function () {
         contactThumbnail.classList.remove('show'); // 非表示
+    });
+
+    // CONTACTリンクのクリックイベント
+    contactLink.addEventListener('click', function(e) {
+        e.preventDefault(); // デフォルトのリンク動作を防止
+        alert('現在準備中です');
     });
     
 });
